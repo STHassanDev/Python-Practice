@@ -52,6 +52,19 @@ class LinkedList:
 
         return count
 
+    def node_at_index(self,index):
+        if index == 0:
+            return self.head
+        else: 
+            current = self.head
+            pos = 0
+
+            while pos < index:
+                current = current.next
+                pos += 1
+            
+            return current
+
     def add(self,data): #Takes O(1) time
         # Add new node at the head of the list 
         # O(1)
