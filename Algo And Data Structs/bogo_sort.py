@@ -8,6 +8,7 @@ def is_sorted(values):
     return True
 
 def bogo_sort(values): #Random shuffles list until it is sorted. One of the lest effective algorithms
+    #Takes O((n-1)*n!) time
     attempt=0
     while not is_sorted(values):
         random.shuffle(values)
