@@ -1,6 +1,11 @@
 import sys
 
 def quick_sort(values):
+    """ Selects the first elements in the array as the 'pivot'. Creates two sublists with one 
+    representing the elements less than the pivot and the other representing the elements greater than
+    the pivot. Recursively repeats this process for the sublists until we are left with empty lists or
+    single elements lists. Adds the list together to form the sorted array.
+    """
     if len(values)<=1:
         return values
     less = [] #sublist of all elements less than or equal to the pivot
