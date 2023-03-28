@@ -18,4 +18,6 @@ def quick_sort(values):
             great.append(i)
     return quick_sort(less) + [pivot] + quick_sort(great)
 
+# Takes O(n log n) time in most case but O(n^2) in worst case if you choose the first element as pivot
+
 print (quick_sort([2,5,3,1,9,7,8,65,34,68,32,11]))

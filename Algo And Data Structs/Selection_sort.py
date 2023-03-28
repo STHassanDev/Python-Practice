@@ -14,5 +14,6 @@ def selection_sort(values):
         sort.append(values.pop(min))
     return sort
     
+# Takes O(n^2) time
 print(selection_sort([1,5,3,9,4,3,2,9,23,43,11,12,13]))
 
