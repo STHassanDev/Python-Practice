@@ -1,13 +1,14 @@
 import sys
 
 def selection_sort(values):
-    min=values[0]
     sort=[]
+    for j in range(0,len(values)):
+        min = 0
+        for i in range(1,len(values)):
+            if values[i] < values[min]:
+                min = i
+        sort.append(values.pop(min))
+    return sort
     
-    for i in range(1,len(values)):
-        if values[min]>values[i]:
-            min=i
-    sort.append(values.pop(min))
-
-
+print(selection_sort([1,5,3,9,4,3,2,9,23,43,11,12,13]))
 
