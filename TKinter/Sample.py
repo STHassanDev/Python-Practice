@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
 
+# Taking the coding in main.py and implementing the gui as a class
+
 class GUI:
     def __init__(self) -> None:
         
