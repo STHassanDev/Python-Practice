@@ -13,8 +13,8 @@ class TempConverter:
         self.label = tk.Label(self.wind, text="Enter the temperature", font=('Arial', 16))
         self.label.pack(padx=10, pady=10)
         
-        self.ent = tk.Entry(self.wind, font=("Arial",16), validate="key")
-        self.ent.configure(validatecommand=self.wind.register(self.validate))
+        self.ent = tk.Entry(self.wind, font=("Arial",16))
+        self.ent.bind("<KeyPress>", self.convert)
         self.ent.pack()
 
         self.btn = tk.Button(self.wind, text="Convert", font=("Arial",18), command=self.convert)
@@ -22,13 +22,17 @@ class TempConverter:
 
         self.wind.mainloop()
 
-    def convert(self):
+    def convert(self, event=None): 
+        """ 
+        The plan is to have the function take two inputs, the 'number' that needs to be converted and the 'type' it is to 
+        be converted to. It will only accept "Fahrenheit, Celsius and Kelvin" as valid arguements for the tpye parameter
+        """
         if self.validate(self.ent.get()):
             print(self.ent.get())
         else:
             print("Your entry is not a number. Please Try Again")
 
-    def validate(self,val):
+    def validate(self,val): # This function will ensure the entry only accpets numbers and valid inputs
         if val=="": return True
         try:
             float(val)
