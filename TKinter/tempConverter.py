@@ -40,4 +40,4 @@ class TempConverter:
         except ValueError:
             return False
 
-bop = TempConverter()
+Go = TempConverter()
