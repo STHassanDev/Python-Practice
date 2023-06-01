@@ -1,3 +1,5 @@
+
+
 new_list=[1,2,3,4,5,6,7]
 new_list[10] 
 #Will access in constant time HOWEVER it will crash because index is out of range
@@ -13,8 +15,8 @@ new_list.insert(3,11) # At index 3 insert 11.
 new_list.append(13) # Add 13 to the END of the list.
 
 #Extend O(k) where k depends on the input size
-new_list.extend([34,56,75]) # Adds the input list to the base list. 
-#Extend is essentially a string of append calls.
+new_list.extend([34,56,75]) # Adds the input list to the orginal list. 
+#Extend is essentially a series of append calls.
 
 """When an insert method is called and the list is out of space, the resize function
 is called. All three methods have an ammortized constant space complexity. Meaning they
