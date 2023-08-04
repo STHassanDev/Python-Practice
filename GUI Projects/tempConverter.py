@@ -8,6 +8,8 @@ class TempConverter:
 
         self.wind.geometry("600x600")
 
+        self.wind.config(bg='#800020')
+
         self.wind.title('Temperature Converter') 
 
         self.label = tk.Label(self.wind, text="Enter the temperature", font=('Arial', 16))
@@ -20,6 +22,13 @@ class TempConverter:
         self.btn = tk.Button(self.wind, text="Convert", font=("Arial",18), command=self.convert) #Button for conversion
         self.btn.pack() 
 
+        self.modes = ['Fahrenheit','Celsius','Kelvin']
+
+        self.val = tk.StringVar(self.wind)
+
+        self.modeMenu = tk.OptionMenu(self.wind,self.val,*self.modes)
+        self.modeMenu.pack()
+
         self.wind.mainloop()
 
     def convert(self, event=None): #Need to add "Enter" as a shortcut
@@ -27,6 +36,7 @@ class TempConverter:
         The plan is to have the function take two inputs, the 'number' that needs to be converted and the 'type' it is to 
         be converted to. It will only accept "Fahrenheit, Celsius and Kelvin" as valid arguements for the tpye parameter
         """
+        
         if self.validate(self.ent.get()):
             print(self.ent.get())
         else:
