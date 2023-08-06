@@ -12,6 +12,7 @@ class TempConverter:
 
         self.wind.title('Temperature Converter') 
 
+        
         self.label = tk.Label(self.wind, text="Enter the temperature", font=('Arial', 16))
         self.label.grid(row=0, column=1)
         
@@ -26,16 +27,18 @@ class TempConverter:
 
         self.val = tk.StringVar(self.wind)
 
-        self.modeMenu = tk.OptionMenu(self.wind,self.val,*self.modes)
-        self.modeMenu.grid(row=1, column=0)
+        self.modeMenu1 = tk.OptionMenu(self.wind,self.val,*self.modes)
+        self.modeMenu1.grid(row=1, column=0)
 
+        self.modeMenu2 = tk.OptionMenu(self.wind,self.val,*self.modes)
+        self.modeMenu2.grid(row=1, column=2)
 
         # Configure all rows to center
         for i in range(3):
             self.wind.grid_rowconfigure(i, weight=1)
 
         # Configure all columns to center
-        for j in range(2):
+        for j in range(3):
             self.wind.grid_columnconfigure(j, weight=1)
 
 
