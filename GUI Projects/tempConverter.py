@@ -13,21 +13,31 @@ class TempConverter:
         self.wind.title('Temperature Converter') 
 
         self.label = tk.Label(self.wind, text="Enter the temperature", font=('Arial', 16))
-        self.label.pack(padx=10, pady=10)
+        self.label.grid(row=0, column=1)
         
         self.ent = tk.Entry(self.wind, font=("Arial",16)) # User enters temperature here
         self.ent.bind("<KeyPress>", self.convert)
-        self.ent.pack()
+        self.ent.grid(row=1,column=1)
 
         self.btn = tk.Button(self.wind, text="Convert", font=("Arial",18), command=self.convert) #Button for conversion
-        self.btn.pack() 
+        self.btn.grid(row=2,column=1) 
 
         self.modes = ['Fahrenheit','Celsius','Kelvin']
 
         self.val = tk.StringVar(self.wind)
 
         self.modeMenu = tk.OptionMenu(self.wind,self.val,*self.modes)
-        self.modeMenu.pack()
+        self.modeMenu.grid(row=1, column=0)
+
+
+        # Configure all rows to center
+        for i in range(3):
+            self.wind.grid_rowconfigure(i, weight=1)
+
+        # Configure all columns to center
+        for j in range(2):
+            self.wind.grid_columnconfigure(j, weight=1)
+
 
         self.wind.mainloop()
 
