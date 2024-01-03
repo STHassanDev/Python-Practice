@@ -103,4 +103,5 @@ print(df.loc[1:4, 'Student':'Country'])  # Selects rows 1 to 4 (inclusive) and c
 # Example:
 print(df.iloc[0:4, 0:3])  # Selects rows 2 to 4 (exclusive of row 5) and columns 0 to 2 (exclusive of column 3).
 
+# YOU CAN ONLY NEGATIVE INDEX WITH iloc
 
